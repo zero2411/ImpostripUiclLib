@@ -189,8 +189,21 @@ var ImpostripUICL = /** @class */ (function () {
             if (this.template == undefined) {
                 this.template = this.bindingCollatingMethod.code + "_" + this.rows + "x" + this.columns + "_" + this.bindingSides;
             }
-            var xmlOptions = { compact: true, attributesKey: "attributes", ignoreComment: false, spaces: 4 };
+            var xmlOptions = {
+                compact: true,
+                attributesKey: "attributes",
+                ignoreComment: false,
+                spaces: 4,
+                ignoreDeclaration: false
+            };
             var impo = {
+                _xmlDeclaration: {
+                    _attr: {
+                        version: "1.0",
+                        encoding: "UTF-8",
+                        standalone: "no"
+                    }
+                },
                 ImpostripOnDemand: {
                     CreateJob: {
                         attributes: {

@@ -210,9 +210,22 @@ export class ImpostripUICL {
       this.template = this.bindingCollatingMethod.code + "_" + this.rows + "x" + this.columns + "_" + this.bindingSides;
     }
 
-    let xmlOptions = { compact: true, attributesKey: "attributes", ignoreComment: false, spaces: 4 };
+    let xmlOptions = {
+      compact: true,
+      attributesKey: "attributes",
+      ignoreComment: false,
+      spaces: 4,
+      ignoreDeclaration: false,
+    };
 
     let impo = {
+      _xmlDeclaration: {
+        _attr: {
+          version: "1.0",
+          encoding: "UTF-8",
+          standalone: "no",
+        },
+      },
       ImpostripOnDemand: {
         CreateJob: {
           attributes: {
