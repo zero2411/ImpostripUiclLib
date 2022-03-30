@@ -215,7 +215,7 @@ export class ImpostripUICL {
       attributesKey: "attributes",
       ignoreComment: false,
       spaces: 4,
-      declarationKey: 'xmlDeclaration',
+      declarationKey: "xmlDeclaration",
     };
 
     let impo = {
@@ -255,23 +255,9 @@ export class ImpostripUICL {
           },
           Template: {
             Name: this.template,
-            TrimSize: {
-              attributes: {
-                Width: this.trimbox.width,
-                Height: this.trimbox.height,
-                Unit: this.trimbox.unit,
-              },
-            },
-            PaperSize: {
-              attributes: {
-                Width: this.sheet.width,
-                Height: this.sheet.height,
-                Unit: this.sheet.unit,
-              },
-            },
           },
         },
-        Marks: {
+        /* Marks: {
           attributes: {
             ShowFoldingMark: "false",
             ShowCutMark: "true",
@@ -281,22 +267,25 @@ export class ImpostripUICL {
             QuarterInchCutMark: "false",
             TrimBoxCutMark: "true",
           },
-        },
-        Output: {
-          attributes: {
-            Format: "PDF",
-            Mockup: false,
-            PDFEngine: "adobelib",
-            OutputPath: this.OutputPath,
-            ImposedFiles: "Jobsperfile",
-          },
-        },
+        }, */
         OtherSettings: {
           attributes: {
             DefaultPDFBox: "Trimbox",
           },
         },
         PrintJob: {
+          Output: {
+            attributes: {
+              Format: "PDF",
+              Mockup: false,
+              PDFEngine: "adobelib",
+              OutputPath: this.OutputPath,
+              ImposedFiles: "Jobsperfile",
+              BackSideFirst: "false",
+              LastSigFirst: "false",
+              Rotation: "0",
+            },
+          },
           attributes: {
             JobID: this.jobName,
           },

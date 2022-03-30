@@ -194,7 +194,7 @@ var ImpostripUICL = /** @class */ (function () {
                 attributesKey: "attributes",
                 ignoreComment: false,
                 spaces: 4,
-                declarationKey: 'xmlDeclaration'
+                declarationKey: "xmlDeclaration"
             };
             var impo = {
                 xmlDeclaration: {
@@ -232,49 +232,38 @@ var ImpostripUICL = /** @class */ (function () {
                             }
                         },
                         Template: {
-                            Name: this.template,
-                            TrimSize: {
-                                attributes: {
-                                    Width: this.trimbox.width,
-                                    Height: this.trimbox.height,
-                                    Unit: this.trimbox.unit
-                                }
-                            },
-                            PaperSize: {
-                                attributes: {
-                                    Width: this.sheet.width,
-                                    Height: this.sheet.height,
-                                    Unit: this.sheet.unit
-                                }
-                            }
+                            Name: this.template
                         }
                     },
-                    Marks: {
-                        attributes: {
-                            ShowFoldingMark: "false",
-                            ShowCutMark: "true"
-                        },
-                        CutMark: {
-                            DoubleCutMark: "false",
-                            QuarterInchCutMark: "false",
-                            TrimBoxCutMark: "true"
-                        }
-                    },
-                    Output: {
-                        attributes: {
-                            Format: "PDF",
-                            Mockup: false,
-                            PDFEngine: "adobelib",
-                            OutputPath: this.OutputPath,
-                            ImposedFiles: "Jobsperfile"
-                        }
-                    },
+                    /* Marks: {
+                      attributes: {
+                        ShowFoldingMark: "false",
+                        ShowCutMark: "true",
+                      },
+                      CutMark: {
+                        DoubleCutMark: "false",
+                        QuarterInchCutMark: "false",
+                        TrimBoxCutMark: "true",
+                      },
+                    }, */
                     OtherSettings: {
                         attributes: {
                             DefaultPDFBox: "Trimbox"
                         }
                     },
                     PrintJob: {
+                        Output: {
+                            attributes: {
+                                Format: "PDF",
+                                Mockup: false,
+                                PDFEngine: "adobelib",
+                                OutputPath: this.OutputPath,
+                                ImposedFiles: "Jobsperfile",
+                                BackSideFirst: "false",
+                                LastSigFirst: "false",
+                                Rotation: "0"
+                            }
+                        },
                         attributes: {
                             JobID: this.jobName
                         },
