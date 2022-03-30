@@ -296,7 +296,16 @@ export class ImpostripUICL {
       },
     };
 
-    // Add row- and column-gutters
+    // Add MarkProfiles
+    let markProfiles = [];
+    for (let i = 0; i < this.markProfiles.length; i++) {
+      markProfiles.push({
+        attributes: { Name: this.markProfiles[i] },
+      });
+    }
+    impo.ImpostripOnDemand.CreateJob["MarkProfiles"] = { Profile: markProfiles };
+
+    // Add Row- and Column-Gutters
     let rowGutters = [];
     for (let i = 1; i < this.rows; i++) {
       rowGutters.push({
@@ -315,14 +324,6 @@ export class ImpostripUICL {
     };
     impo.ImpostripOnDemand.PrintJob["Gutters"] = gutters;
 
-    // Add marksets
-    let markProfiles = [];
-    for (let i = 0; i < this.markProfiles.length; i++) {
-      markProfiles.push({
-        attributes: { Name: this.markProfiles[i] },
-      });
-    }
-    impo.ImpostripOnDemand["MarkProfiles"] = { Profile: markProfiles };
 
     // Add documents
     let documents = [];

@@ -273,7 +273,15 @@ var ImpostripUICL = /** @class */ (function () {
                     }
                 }
             };
-            // Add row- and column-gutters
+            // Add MarkProfiles
+            var markProfiles = [];
+            for (var i = 0; i < this.markProfiles.length; i++) {
+                markProfiles.push({
+                    attributes: { Name: this.markProfiles[i] }
+                });
+            }
+            impo.ImpostripOnDemand.CreateJob["MarkProfiles"] = { Profile: markProfiles };
+            // Add Row- and Column-Gutters
             var rowGutters = [];
             for (var i = 1; i < this.rows; i++) {
                 rowGutters.push({
@@ -291,14 +299,6 @@ var ImpostripUICL = /** @class */ (function () {
                 ColumnGutter: columnGutters
             };
             impo.ImpostripOnDemand.PrintJob["Gutters"] = gutters;
-            // Add marksets
-            var markProfiles = [];
-            for (var i = 0; i < this.markProfiles.length; i++) {
-                markProfiles.push({
-                    attributes: { Name: this.markProfiles[i] }
-                });
-            }
-            impo.ImpostripOnDemand["MarkProfiles"] = { Profile: markProfiles };
             // Add documents
             var documents = [];
             for (var i = 0; i < this.documents.length; i++) {
