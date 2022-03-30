@@ -215,12 +215,12 @@ export class ImpostripUICL {
       attributesKey: "attributes",
       ignoreComment: false,
       spaces: 4,
-      declarationKey: '_xmlDeclaration',
+      declarationKey: 'xmlDeclaration',
     };
 
     let impo = {
-      _xmlDeclaration: {
-        _attr: {
+      xmlDeclaration: {
+        attributes: {
           version: "1.0",
           encoding: "UTF-8",
           standalone: "no",
