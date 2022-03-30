@@ -272,9 +272,6 @@ var ImpostripUICL = /** @class */ (function () {
                         },
                         attributes: {
                             JobID: this.jobName
-                        },
-                        RefJob: {
-                            Name: this.jobName
                         }
                     }
                 }

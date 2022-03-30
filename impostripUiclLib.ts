@@ -295,9 +295,6 @@ export class ImpostripUICL {
           attributes: {
             JobID: this.jobName,
           },
-          RefJob: {
-            Name: this.jobName,
-          },
         },
       },
     };
