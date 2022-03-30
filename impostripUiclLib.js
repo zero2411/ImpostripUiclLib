@@ -290,7 +290,7 @@ var ImpostripUICL = /** @class */ (function () {
                 RowGutter: rowGutters,
                 ColumnGutter: columnGutters
             };
-            impo.ImpostripOnDemand.CreateJob.Template["Gutters"] = gutters;
+            impo.ImpostripOnDemand.PrintJob["Gutters"] = gutters;
             // Add marksets
             var markProfiles = [];
             for (var i = 0; i < this.markProfiles.length; i++) {
@@ -312,7 +312,7 @@ var ImpostripUICL = /** @class */ (function () {
                 }
                 documents.push(document_1);
             }
-            impo.ImpostripOnDemand["Documents"] = { DocFile: documents };
+            impo.ImpostripOnDemand.PrintJob["Documents"] = { DocFile: documents };
             return convert.js2xml(impo, xmlOptions);
         };
     }

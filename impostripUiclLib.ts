@@ -313,7 +313,7 @@ export class ImpostripUICL {
       RowGutter: rowGutters,
       ColumnGutter: columnGutters,
     };
-    impo.ImpostripOnDemand.CreateJob.Template["Gutters"] = gutters;
+    impo.ImpostripOnDemand.PrintJob["Gutters"] = gutters;
 
     // Add marksets
     let markProfiles = [];
@@ -337,7 +337,7 @@ export class ImpostripUICL {
       }
       documents.push(document);
     }
-    impo.ImpostripOnDemand["Documents"] = { DocFile: documents };
+    impo.ImpostripOnDemand.PrintJob["Documents"] = { DocFile: documents };
 
     return convert.js2xml(impo, xmlOptions);
   };
