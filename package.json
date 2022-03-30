@@ -1,0 +1,23 @@
+{
+  "name": "impostripuicllib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "impostripUiclLib.js",
+  "dependencies": {
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zero2411/ImpostripUiclLib.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zero2411/ImpostripUiclLib/issues"
+  },
+  "homepage": "https://github.com/zero2411/ImpostripUiclLib#readme"
+}
