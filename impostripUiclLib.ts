@@ -256,6 +256,17 @@ export class ImpostripUICL {
           Template: {
             Name: this.template,
           },
+          OtherSettings: {
+            attributes: {
+              DefaultPDFBox: "trimbox",
+              PDFPageAlignment: "center",
+              BuiltinMarkOnBlackOnly: "false",
+              NoPhaseInfoInOutputPSfile: "false",
+              GroupSignaturesOutput: "false",
+              GroupSignaturesAmount: "0",
+              PDFXObjectOptimization: "true",
+            },
+          },
         },
         /* Marks: {
           attributes: {
@@ -268,11 +279,6 @@ export class ImpostripUICL {
             TrimBoxCutMark: "true",
           },
         }, */
-        OtherSettings: {
-          attributes: {
-            DefaultPDFBox: "Trimbox",
-          },
-        },
         PrintJob: {
           Output: {
             attributes: {
@@ -323,7 +329,6 @@ export class ImpostripUICL {
       ColumnGutter: columnGutters,
     };
     impo.ImpostripOnDemand.PrintJob["Gutters"] = gutters;
-
 
     // Add documents
     let documents = [];

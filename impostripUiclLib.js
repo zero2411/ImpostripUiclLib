@@ -233,6 +233,17 @@ var ImpostripUICL = /** @class */ (function () {
                         },
                         Template: {
                             Name: this.template
+                        },
+                        OtherSettings: {
+                            attributes: {
+                                DefaultPDFBox: "trimbox",
+                                PDFPageAlignment: "center",
+                                BuiltinMarkOnBlackOnly: "false",
+                                NoPhaseInfoInOutputPSfile: "false",
+                                GroupSignaturesOutput: "false",
+                                GroupSignaturesAmount: "0",
+                                PDFXObjectOptimization: "true"
+                            }
                         }
                     },
                     /* Marks: {
@@ -246,11 +257,6 @@ var ImpostripUICL = /** @class */ (function () {
                         TrimBoxCutMark: "true",
                       },
                     }, */
-                    OtherSettings: {
-                        attributes: {
-                            DefaultPDFBox: "Trimbox"
-                        }
-                    },
                     PrintJob: {
                         Output: {
                             attributes: {
