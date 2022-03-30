@@ -194,7 +194,7 @@ var ImpostripUICL = /** @class */ (function () {
                 attributesKey: "attributes",
                 ignoreComment: false,
                 spaces: 4,
-                ignoreDeclaration: false
+                declarationKey: '_xmlDeclaration'
             };
             var impo = {
                 _xmlDeclaration: {
