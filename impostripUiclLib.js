@@ -200,8 +200,7 @@ var ImpostripUICL = /** @class */ (function () {
                 xmlDeclaration: {
                     attributes: {
                         version: "1.0",
-                        encoding: "UTF-8",
-                        standalone: "no"
+                        encoding: "UTF-8"
                     }
                 },
                 ImpostripOnDemand: {
