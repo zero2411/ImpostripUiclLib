@@ -24,32 +24,39 @@ var convert = require("xml-js");
 //     console.error(e);
 //   }
 // }
-exports.CollatingMethod = {
-    PerfectBound: { name: "Perfect Bound", code: "PB" },
-    SaddleStiched: { name: "Saddle Stiched", code: "SS" },
-    StepAndRepeat: { name: "Step and Repeat", code: "SR" },
-    CutAndStack: { name: "Cut and Stack", code: "CS" },
-    WebSectioning: { name: "Web sectioning", code: "WS" },
-    RibbonCutAndStack: { name: "Ribbon cut and stack", code: "RCS" },
-    BalancedSections: { name: "Balanced sections", code: "BS" },
-    ComingAndGoing: { name: "Coming and Going", code: "CG" }
-};
-exports.Sides = {
-    Simplex: "simplex",
-    Duplex: "duplex"
-};
-exports.BindingSide = {
-    Left: "left",
-    Right: "right",
-    Top: "top",
-    Bottom: "bottom"
-};
-exports.Unit = {
-    mm: "MM",
-    cm: "CM",
-    inch: "INCH",
-    pt: "ADOBE"
-};
+var CollatingMethod;
+(function (CollatingMethod) {
+    CollatingMethod["PerfectBound"] = "Perfect Bound";
+    CollatingMethod["SaddleStiched"] = "Saddle Stiched";
+    CollatingMethod["StepAndRepeat"] = "Step and Repeat";
+    CollatingMethod["CutAndStack"] = "Cut and Stack";
+    CollatingMethod["WebSectioning"] = "Web sectioning";
+    CollatingMethod["RibbonCutAndStack"] = "Ribbon cut and stack";
+    CollatingMethod["BalancedSections"] = "Balanced sections";
+    CollatingMethod["ComingAndGoing"] = "Coming and Going";
+})(CollatingMethod = exports.CollatingMethod || (exports.CollatingMethod = {}));
+;
+var Sides;
+(function (Sides) {
+    Sides["Simplex"] = "simplex";
+    Sides["Duplex"] = "duplex";
+})(Sides = exports.Sides || (exports.Sides = {}));
+;
+var BindingSide;
+(function (BindingSide) {
+    BindingSide["Left"] = "left";
+    BindingSide["Right"] = "right";
+    BindingSide["Top"] = "top";
+    BindingSide["Bottom"] = "bottom";
+})(BindingSide = exports.BindingSide || (exports.BindingSide = {}));
+;
+var Unit;
+(function (Unit) {
+    Unit["mm"] = "MM";
+    Unit["cm"] = "CM";
+    Unit["inch"] = "INCH";
+    Unit["pt"] = "ADOBE";
+})(Unit = exports.Unit || (exports.Unit = {}));
 var ImpostripUICL = /** @class */ (function () {
     function ImpostripUICL() {
         this.markProfiles = [];
@@ -68,23 +75,20 @@ var ImpostripUICL = /** @class */ (function () {
             this.bindingCollatingMethod = bindingCollatingMethod;
             this.bindingSides = bindingSides;
             this.bindingSide = bindingSide;
-            console.info(this);
         };
         // Set Trimbox
         this.setTrimbox = function (width, height, unit) {
-            if (unit === void 0) { unit = exports.Unit.mm; }
             this.trimbox = {
-                width: Math.round(width * 10) / 10,
-                height: Math.round(height * 10) / 10,
-                unit: "MM"
+                width: width,
+                height: height,
+                unit: unit
             };
         };
         // Set Sheet
         this.setSheet = function (width, height, unit) {
-            if (unit === void 0) { unit = exports.Unit.mm; }
             this.sheet = {
-                width: Math.round(width),
-                height: Math.round(height),
+                width: width,
+                height: height,
                 unit: unit
             };
         };
@@ -95,18 +99,16 @@ var ImpostripUICL = /** @class */ (function () {
         };
         // Set Margins
         this.setMargins = function (top, bottom, left, right, unit) {
-            if (unit === void 0) { unit = "MM"; }
             this.margins = {
-                top: Math.round(top * 10) / 10,
-                bottom: Math.round(bottom * 10) / 10,
-                left: Math.round(left * 10) / 10,
-                right: Math.round(right * 10) / 10,
+                top: top,
+                bottom: bottom,
+                left: left,
+                right: right,
                 unit: unit
             };
         };
         // Set Gutters
         this.setGutters = function (rowGutter, columnGutter, unit) {
-            if (unit === void 0) { unit = "MM"; }
             this.gutters = {
                 rowGutter: rowGutter,
                 columnGutter: columnGutter,
@@ -245,17 +247,6 @@ var ImpostripUICL = /** @class */ (function () {
                             }
                         }
                     },
-                    /* Marks: {
-                      attributes: {
-                        ShowFoldingMark: "false",
-                        ShowCutMark: "true",
-                      },
-                      CutMark: {
-                        DoubleCutMark: "false",
-                        QuarterInchCutMark: "false",
-                        TrimBoxCutMark: "true",
-                      },
-                    }, */
                     PrintJob: {
                         Output: {
                             attributes: {

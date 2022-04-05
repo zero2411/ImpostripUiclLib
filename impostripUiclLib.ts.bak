@@ -24,29 +24,35 @@ import * as convert from "xml-js";
 //   }
 // }
 
-export enum CollatingMethod  {
-  PerfectBound= "Perfect Bound",
-  SaddleStiched= "Saddle Stiched",
-  StepAndRepeat= "Step and Repeat",
-  CutAndStack="Cut and Stack",
-  WebSectioning="Web sectioning",
-  RibbonCutAndStack="Ribbon cut and stack",
-  BalancedSections="Balanced sections",
-  ComingAndGoing="Coming and Going",
-};
+export const CollatingMethod = {
+  PerfectBound: { name: "Perfect Bound", code: "PB" },
+  SaddleStiched: { name: "Saddle Stiched", code: "SS" },
+  StepAndRepeat: { name: "Step and Repeat", code: "SR" },
+  CutAndStack: { name: "Cut and Stack", code: "CS" },
+  WebSectioning: { name: "Web sectioning", code: "WS" },
+  RibbonCutAndStack: { name: "Ribbon cut and stack", code: "RCS" },
+  BalancedSections: { name: "Balanced sections", code: "BS" },
+  ComingAndGoing: { name: "Coming and Going", code: "CG" },
+} as const;
 
-export enum Sides {
-  Simplex= "simplex",
-  Duplex="duplex",
-};
+export const Sides = {
+  Simplex: "simplex",
+  Duplex: "duplex",
+} as const;
 
-export enum BindingSide {
-  Left="left",
-  Right="right",
-  Top= "top",
-  Bottom= "bottom",
-};
+export const BindingSide = {
+  Left: "left",
+  Right: "right",
+  Top: "top",
+  Bottom: "bottom",
+} as const;
 
+// export const Unit = {
+//   mm: "MM",
+//   cm: "CM",
+//   inch: "INCH",
+//   pt: "ADOBE",
+// } as const;
 export enum Unit {
   mm = "MM",
   cm = "CM",
@@ -88,7 +94,7 @@ export class ImpostripUICL {
   };
 
   // Set Trimbox
-  setTrimbox = function (width: number, height: number, unit:Unit) {
+  setTrimbox = function (width: number, height: number, unit = Unit.pt) {
     this.trimbox = {
       width: width,
       height: height,
@@ -97,7 +103,7 @@ export class ImpostripUICL {
   };
 
   // Set Sheet
-  setSheet = function (width: number, height: number, unit:Unit) {
+  setSheet = function (width: number, height: number, unit = Unit.pt) {
     this.sheet = {
       width: width,
       height: height,
@@ -112,7 +118,7 @@ export class ImpostripUICL {
   };
 
   // Set Margins
-  setMargins = function (top: number, bottom: number, left: number, right: number, unit:Unit) {
+  setMargins = function (top: number, bottom: number, left: number, right: number, unit = Unit.pt) {
     this.margins = {
       top: top,
       bottom: bottom,
@@ -123,7 +129,7 @@ export class ImpostripUICL {
   };
 
   // Set Gutters
-  setGutters = function (rowGutter: number, columnGutter: number, unit:Unit) {
+  setGutters = function (rowGutter: number, columnGutter: number, unit = Unit.pt) {
     this.gutters = {
       rowGutter: rowGutter,
       columnGutter: columnGutter,
@@ -266,6 +272,17 @@ export class ImpostripUICL {
             },
           },
         },
+        /* Marks: {
+          attributes: {
+            ShowFoldingMark: "false",
+            ShowCutMark: "true",
+          },
+          CutMark: {
+            DoubleCutMark: "false",
+            QuarterInchCutMark: "false",
+            TrimBoxCutMark: "true",
+          },
+        }, */
         PrintJob: {
           Output: {
             attributes: {
