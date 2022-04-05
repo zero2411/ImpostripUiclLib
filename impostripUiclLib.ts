@@ -1,51 +1,27 @@
 import * as convert from "xml-js";
 
-// function test() {
-//   try {
-//     let imp = new ImpostripUICL();
-//     imp.setJobName("TestJob");
-//     imp.setOutputPath("C:\\Users\\admin-wihabo\\Desktop\\Output");
-//     imp.setBinding(CollatingMethod.CutAndStack , Sides.Duplex, BindingSide.Left);
-
-//     imp.setTrimbox(171,141, "MM");
-//     imp.setSheet(748, 528, "MM");
-//     imp.setRowsAndColumns(4,4);
-//     imp.setMargins(28.5,28.5,24.5,24.5, "MM");
-//     imp.setGutters(5, 5, "MM");
-//     imp.addMarkProfile("SF Cutmarks");
-//     imp.addMarkProfile("SF Slugline");
-//     imp.addDocument("C:\\Users\\admin-wihabo\\Desktop\\Test bestanden\\TEST 114x171 duplex\\Dummy 114x171 - Duplex - Cyaan.pdf");
-//     imp.addDocument("C:\\Users\\admin-wihabo\\Desktop\\Test bestanden\\TEST 114x171 duplex\\Dummy 114x171 - Duplex - Geel.pdf");
-//     imp.addDocument("C:\\Users\\admin-wihabo\\Desktop\\Test bestanden\\TEST 114x171 duplex\\Dummy 171x114 - Duplex - Groen.pdf");
-//     imp.addDocument("C:\\Users\\admin-wihabo\\Desktop\\Test bestanden\\TEST 114x171 duplex\\Dummy 171x114 - Duplex - Paars.pdf");
-//     console.log(imp.getXML());
-//   } catch (e) {
-//     console.error(e);
-//   }
-// }
-
-export enum CollatingMethod  {
-  PerfectBound= "Perfect Bound",
-  SaddleStiched= "Saddle Stiched",
-  StepAndRepeat= "Step and Repeat",
-  CutAndStack="Cut and Stack",
-  WebSectioning="Web sectioning",
-  RibbonCutAndStack="Ribbon cut and stack",
-  BalancedSections="Balanced sections",
-  ComingAndGoing="Coming and Going",
-};
+export enum CollatingMethod {
+  PerfectBound = "Perfect Bound",
+  SaddleStiched = "Saddle Stiched",
+  StepAndRepeat = "Step and Repeat",
+  CutAndStack = "Cut and Stack",
+  WebSectioning = "Web sectioning",
+  RibbonCutAndStack = "Ribbon cut and stack",
+  BalancedSections = "Balanced sections",
+  ComingAndGoing = "Coming and Going",
+}
 
 export enum Sides {
-  Simplex= "simplex",
-  Duplex="duplex",
-};
+  Simplex = "simplex",
+  Duplex = "duplex",
+}
 
 export enum BindingSide {
-  Left="left",
-  Right="right",
-  Top= "top",
-  Bottom= "bottom",
-};
+  Left = "left",
+  Right = "right",
+  Top = "top",
+  Bottom = "bottom",
+}
 
 export enum Unit {
   mm = "MM",
@@ -53,7 +29,6 @@ export enum Unit {
   inch = "INCH",
   pt = "ADOBE",
 }
-
 export class ImpostripUICL {
   private jobName: string;
   private outputPath: string;
@@ -88,7 +63,7 @@ export class ImpostripUICL {
   };
 
   // Set Trimbox
-  setTrimbox = function (width: number, height: number, unit:Unit) {
+  setTrimbox = function (width: number, height: number, unit: Unit) {
     this.trimbox = {
       width: width,
       height: height,
@@ -97,7 +72,7 @@ export class ImpostripUICL {
   };
 
   // Set Sheet
-  setSheet = function (width: number, height: number, unit:Unit) {
+  setSheet = function (width: number, height: number, unit: Unit) {
     this.sheet = {
       width: width,
       height: height,
@@ -112,7 +87,7 @@ export class ImpostripUICL {
   };
 
   // Set Margins
-  setMargins = function (top: number, bottom: number, left: number, right: number, unit:Unit) {
+  setMargins = function (top: number, bottom: number, left: number, right: number, unit: Unit) {
     this.margins = {
       top: top,
       bottom: bottom,
@@ -123,7 +98,7 @@ export class ImpostripUICL {
   };
 
   // Set Gutters
-  setGutters = function (rowGutter: number, columnGutter: number, unit:Unit) {
+  setGutters = function (rowGutter: number, columnGutter: number, unit: Unit) {
     this.gutters = {
       rowGutter: rowGutter,
       columnGutter: columnGutter,
@@ -332,5 +307,3 @@ export class ImpostripUICL {
     return convert.js2xml(impo, xmlOptions);
   };
 }
-
-//test();

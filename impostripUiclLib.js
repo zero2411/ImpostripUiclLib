@@ -2,28 +2,6 @@
 exports.__esModule = true;
 exports.ImpostripUICL = exports.Unit = exports.BindingSide = exports.Sides = exports.CollatingMethod = void 0;
 var convert = require("xml-js");
-// function test() {
-//   try {
-//     let imp = new ImpostripUICL();
-//     imp.setJobName("TestJob");
-//     imp.setOutputPath("C:\\Users\\admin-wihabo\\Desktop\\Output");
-//     imp.setBinding(CollatingMethod.CutAndStack , Sides.Duplex, BindingSide.Left);
-//     imp.setTrimbox(171,141, "MM");
-//     imp.setSheet(748, 528, "MM");
-//     imp.setRowsAndColumns(4,4);
-//     imp.setMargins(28.5,28.5,24.5,24.5, "MM");
-//     imp.setGutters(5, 5, "MM");
-//     imp.addMarkProfile("SF Cutmarks");
-//     imp.addMarkProfile("SF Slugline");
-//     imp.addDocument("C:\\Users\\admin-wihabo\\Desktop\\Test bestanden\\TEST 114x171 duplex\\Dummy 114x171 - Duplex - Cyaan.pdf");
-//     imp.addDocument("C:\\Users\\admin-wihabo\\Desktop\\Test bestanden\\TEST 114x171 duplex\\Dummy 114x171 - Duplex - Geel.pdf");
-//     imp.addDocument("C:\\Users\\admin-wihabo\\Desktop\\Test bestanden\\TEST 114x171 duplex\\Dummy 171x114 - Duplex - Groen.pdf");
-//     imp.addDocument("C:\\Users\\admin-wihabo\\Desktop\\Test bestanden\\TEST 114x171 duplex\\Dummy 171x114 - Duplex - Paars.pdf");
-//     console.log(imp.getXML());
-//   } catch (e) {
-//     console.error(e);
-//   }
-// }
 var CollatingMethod;
 (function (CollatingMethod) {
     CollatingMethod["PerfectBound"] = "Perfect Bound";
@@ -35,13 +13,11 @@ var CollatingMethod;
     CollatingMethod["BalancedSections"] = "Balanced sections";
     CollatingMethod["ComingAndGoing"] = "Coming and Going";
 })(CollatingMethod = exports.CollatingMethod || (exports.CollatingMethod = {}));
-;
 var Sides;
 (function (Sides) {
     Sides["Simplex"] = "simplex";
     Sides["Duplex"] = "duplex";
 })(Sides = exports.Sides || (exports.Sides = {}));
-;
 var BindingSide;
 (function (BindingSide) {
     BindingSide["Left"] = "left";
@@ -49,7 +25,6 @@ var BindingSide;
     BindingSide["Top"] = "top";
     BindingSide["Bottom"] = "bottom";
 })(BindingSide = exports.BindingSide || (exports.BindingSide = {}));
-;
 var Unit;
 (function (Unit) {
     Unit["mm"] = "MM";
@@ -312,4 +287,3 @@ var ImpostripUICL = /** @class */ (function () {
     return ImpostripUICL;
 }());
 exports.ImpostripUICL = ImpostripUICL;
-//test();
